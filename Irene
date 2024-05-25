@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Organizer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #e4e4e4;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"], button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover, button:hover {
+            background-color: #555;
+        }
+        .calendar {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Personal Organizer</h1>
+
+        <div class="section">
+            <h2>Daily Schedule</h2>
+            <textarea id="daily-schedule" rows="5" placeholder="Enter your daily schedule here..."></textarea>
+        </div>
+
+        <div class="section">
+            <h2>Big Things to Do</h2>
+            <ul id="big-things-list"></ul>
+            <input type="text" id="big-thing-input" placeholder="Add a big task...">
+            <button onclick="addBigThing()">Add</button>
+        </div>
+
+        <div class="section">
+            <h2>Small Things to Do</h2>
+            <ul id="small-things-list"></ul>
+            <input type="text" id="small-thing-input" placeholder="Add a small task...">
+            <button onclick="addSmallThing()">Add</button>
+        </div>
+
+        <div class="section">
+            <h2>Books I'm Reading</h2>
+            <ul id="books-list"></ul>
+            <input type="text" id="book-input" placeholder="Add a book...">
+            <button onclick="addBook()">Add</button>
+        </div>
+
+        <div class="section">
+            <h2>Music I'm Listening To</h2>
+            <ul id="music-list"></ul>
+            <input type="text" id="music-input" placeholder="Add a song...">
+            <button onclick="addMusic()">Add</button>
+        </div>
+
+        <div class="section">
+            <h2>Movies to Watch</h2>
+            <ul id="movies-list"></ul>
+            <input type="text" id="movie-input" placeholder="Add a movie...">
+            <button onclick="addMovie()">Add</button>
+        </div>
+
+        <div class="section">
+            <h2>TV Series to Watch</h2>
+            <ul id="tv-series-list"></ul>
+            <input type="text" id="tv-series-input" placeholder="Add a TV series...">
+            <button onclick="addTVSeries()">Add</button>
+        </div>
+
+        <div class="section">
+            <h2>Note-Taking Section</h2>
+            <textarea id="notes" rows="5" placeholder="Take your notes here..."></textarea>
+        </div>
+
+        <div class="section calendar">
+            <h2>Calendar</h2>
+            <iframe src="https://calendar.google.com/calendar/embed?src=en.indian%23holiday%40group.v.calendar.google.com&ctz=America%2FLos_Angeles" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+
+        <div class="section">
+            <h2>Reminders</h2>
+            <textarea id="reminders" rows="5" placeholder="Set your reminders here..."></textarea>
+        </div>
+
+        <div class="section">
+            <h2>Personal Reflections</h2>
+            <textarea id="reflections" rows="5" placeholder="Write your personal reflections here..."></textarea>
+        </div>
+    </div>
+
+    <script>
+        function addBigThing() {
+            const input = document.getElementById('big-thing-input');
+            const list = document.getElementById('big-things-list');
+            const listItem = document.createElement('li');
+            listItem.textContent = input.value;
+            list.appendChild(listItem);
+            input.value = '';
+        }
+
+        function addSmallThing() {
+            const input = document.getElementById('small-thing-input');
+            const list = document.getElementById('small-things-list');
+            const listItem = document.createElement('li');
+            listItem.textContent = input.value;
+            list.appendChild(listItem);
+            input.value = '';
+        }
+
+        function addBook() {
+            const input = document.getElementById('book-input');
+            const list = document.getElementById('books-list');
+            const listItem = document.createElement('li');
+            listItem.textContent = input.value;
+            list.appendChild(listItem);
+            input.value = '';
+        }
+
+        function addMusic() {
+            const input = document.getElementById('music-input');
+            const list = document.getElementById('music-list');
+            const listItem = document.createElement('li');
+            listItem.textContent = input.value;
+            list.appendChild(listItem);
+            input.value = '';
+        }
+
+        function addMovie() {
+            const input = document.getElementById('movie-input');
+            const list = document.getElementById('movies-list');
+            const listItem = document.createElement('li');
+            listItem.textContent = input.value;
+            list.appendChild(listItem);
+            input.value = '';
+        }
+
+        function addTVSeries() {
+            const input = document.getElementById('tv-series-input');
+            const list = document.getElementById('tv-series-list');
+            const listItem = document.createElement('li');
+            listItem.textContent = input.value;
+            list.appendChild(listItem);
+            input.value = '';
+        }
+    </script>
+</body>
+</html>
